@@ -52,6 +52,8 @@ HANDLERS = {
     "phone": show_number,
 }
 
+EXIT_COMMANDS = ("exit", "close", "good bye")
+
 
 def parser_input(user_input):
     cmd, *args = user_input.split()
@@ -62,7 +64,7 @@ def parser_input(user_input):
 def main():
     while True:
         user_input = input(">>>")
-        if user_input.lower() == "exit" or user_input.lower() == "close" or user_input.lower() == "good bye":
+        if user_input.lower() in EXIT_COMMANDS:
             print("Good bye!")
             break
 
